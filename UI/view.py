@@ -24,7 +24,8 @@ class View(ft.UserControl):
         self._title = ft.Text("TdP Lab 14 - simulazione esame", color="blue", size=24)
         self._page.controls.append(self._title)
 
-        self._ddStore = ft.Dropdown(label="Store")
+        self._ddStore = ft.Dropdown(label="Store", on_change=self._controller.handleDD)
+        self._controller.fillDD()
         self._txtIntK = ft.TextField(label="Numero giorni massimo K")
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handleCreaGrafo)
         cont = ft.Container(self._ddStore, width=250, alignment=ft.alignment.top_left)
